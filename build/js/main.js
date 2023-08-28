@@ -24,3 +24,6 @@ const sum = (a, b) => {
 };
 ans = sum(5, "10");
 console.log("ans", ans);
+let myData = ["SS", 10, true, "SAS"];
+myData.push(false);
+console.log(myData);

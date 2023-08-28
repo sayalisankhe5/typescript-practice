@@ -26,3 +26,7 @@ const sum = (a: number, b: string) => {
 
 ans = sum(5, "10");
 console.log("ans", ans);
+
+let myData: [string, number, boolean, string] = ["SS", 10, true, "SAS"];
+myData.push(false);
+console.log(myData);

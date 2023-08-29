@@ -27,3 +27,40 @@ console.log("ans", ans);
 let myData = ["SS", 10, true, "SAS"];
 myData.push(false);
 console.log(myData);
+let myObj;
+myObj = [1, 2, "SS"];
+myObj = {};
+let anotherObj = { key1: "value1", key2: "value2", key3: 45 };
+let ab = {
+    name: "Pet",
+    age: 10,
+    active: false,
+};
+let pq = {
+    name: "Kate",
+    active: 1,
+};
+//ab = pq;
+const greetings = (inputdata) => {
+    //return `helloo ${inputdata.name?.toUpperCase()}`; OR
+    if (inputdata.name) {
+        return `helloo ${inputdata.name.toUpperCase()}`;
+    }
+    return "hello";
+};
+console.log(greetings(ab));
+let jk = {
+    name: "Dav",
+    age: 20,
+    gender: "M",
+    active: true,
+};
+var fontSize;
+(function (fontSize) {
+    fontSize[fontSize["small"] = 0] = "small";
+    fontSize[fontSize["medium"] = 1] = "medium";
+    fontSize[fontSize["large"] = 2] = "large";
+    fontSize[fontSize["extraLarge"] = 3] = "extraLarge";
+})(fontSize || (fontSize = {}));
+console.log(fontSize[2]);
+console.log(fontSize.small);

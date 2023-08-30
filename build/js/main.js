@@ -99,3 +99,7 @@ const add3 = (a = 5, b, c = 1) => {
 displayMsg(add3(10, 20, 50));
 displayMsg(add3(10, 50));
 displayMsg(add3(undefined, 20));
+const sum1 = (b, ...nums) => {
+    return b + nums.reduce((prev, curr) => prev + curr);
+};
+displayMsg(sum1(10, 2, 3));

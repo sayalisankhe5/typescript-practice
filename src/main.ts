@@ -141,3 +141,9 @@ const add3 = (a: number = 5, b: number, c: number = 1): number => {
 displayMsg(add3(10, 20, 50));
 displayMsg(add3(10, 50));
 displayMsg(add3(undefined, 20));
+
+const sum1 = (b: number, ...nums: number[]): number => {
+  return b + nums.reduce((prev, curr) => prev + curr);
+};
+
+displayMsg(sum1(10, 2, 3));

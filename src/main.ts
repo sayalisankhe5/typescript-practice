@@ -90,3 +90,54 @@ enum fontSize {
 console.log(fontSize[2]);
 
 console.log(fontSize.small);
+
+type stringORnumber = string | number;
+type userId = stringORnumber;
+type Entities = {
+  name: string;
+  id: stringORnumber;
+};
+let myName: "SS";
+let Colors: "Blue" | "Red" | "Green";
+Colors = "Blue";
+const add = (a: number, b: number): number => {
+  return a + b;
+};
+const displayMsg = (msg: any): void => {
+  console.log(msg);
+};
+displayMsg(add(2, 5));
+
+function add1(a: number, b: number): number {
+  return a + b;
+}
+displayMsg(add1(10, 2));
+
+type mathFunc = (a: number, b: number) => number;
+
+let multiply: mathFunc = function (c, d) {
+  return c * d;
+};
+displayMsg(multiply(10, 2));
+
+interface mathsFunc {
+  (a: number, b: number): number;
+}
+let mul: mathsFunc = function (c, d) {
+  return c * d;
+};
+displayMsg(mul(10, 20));
+
+const add2 = (a: number, b: number, c?: number): number => {
+  if (typeof c !== "undefined") {
+    return a + b + c;
+  }
+  return a + b;
+};
+displayMsg(add2(10, 20));
+const add3 = (a: number = 5, b: number, c: number = 1): number => {
+  return a + b + c;
+};
+displayMsg(add3(10, 20, 50));
+displayMsg(add3(10, 50));
+displayMsg(add3(undefined, 20));

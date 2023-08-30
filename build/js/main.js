@@ -64,3 +64,38 @@ var fontSize;
 })(fontSize || (fontSize = {}));
 console.log(fontSize[2]);
 console.log(fontSize.small);
+let myName;
+let Colors;
+Colors = "Blue";
+const add = (a, b) => {
+    return a + b;
+};
+const displayMsg = (msg) => {
+    console.log(msg);
+};
+displayMsg(add(2, 5));
+function add1(a, b) {
+    return a + b;
+}
+displayMsg(add1(10, 2));
+let multiply = function (c, d) {
+    return c * d;
+};
+displayMsg(multiply(10, 2));
+let mul = function (c, d) {
+    return c * d;
+};
+displayMsg(mul(10, 20));
+const add2 = (a, b, c) => {
+    if (typeof c !== "undefined") {
+        return a + b + c;
+    }
+    return a + b;
+};
+displayMsg(add2(10, 20));
+const add3 = (a = 5, b, c = 1) => {
+    return a + b + c;
+};
+displayMsg(add3(10, 20, 50));
+displayMsg(add3(10, 50));
+displayMsg(add3(undefined, 20));

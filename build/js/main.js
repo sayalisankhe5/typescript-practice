@@ -103,3 +103,20 @@ const sum1 = (b, ...nums) => {
     return b + nums.reduce((prev, curr) => prev + curr);
 };
 displayMsg(sum1(10, 2, 3));
+const createError = (errMsg) => {
+    throw new Error(errMsg);
+};
+const numOrString = (value) => {
+    if (typeof value === "string")
+        return "string";
+    if (typeof value === "number")
+        return "number";
+    //return "This cannot happen";
+    return createError("This cannot happen");
+};
+const isNumber = (num) => {
+    return typeof num == "number" ? true : false;
+};
+let a1 = "hello";
+let b1 = a1;
+let c1 = a1;

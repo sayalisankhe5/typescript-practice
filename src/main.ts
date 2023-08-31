@@ -147,3 +147,25 @@ const sum1 = (b: number, ...nums: number[]): number => {
 };
 
 displayMsg(sum1(10, 2, 3));
+
+const createError = (errMsg: string) => {
+  throw new Error(errMsg);
+};
+
+const numOrString = (value: number | string): string => {
+  if (typeof value === "string") return "string";
+  if (typeof value === "number") return "number";
+  //return "This cannot happen";
+  return createError("This cannot happen");
+};
+const isNumber = (num: number): boolean => {
+  return typeof num == "number" ? true : false;
+};
+
+type One = string;
+type Two = string | number;
+type Three = "hello";
+
+let a1: One = "hello";
+let b1 = a1 as Two;
+let c1 = <Three>a1;

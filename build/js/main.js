@@ -128,3 +128,4 @@ const addORconcat = (a, b, c) => {
 let firstValue = addORconcat(2, 5, "add");
 let secondValue = addORconcat(2, 5, "concat");
 console.log(firstValue, secondValue);
+10;

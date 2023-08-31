@@ -182,3 +182,5 @@ const addORconcat = (
 let firstValue: number = addORconcat(2, 5, "add") as number;
 let secondValue = addORconcat(2, 5, "concat");
 console.log(firstValue, secondValue);
+
+10 as unknown as string;

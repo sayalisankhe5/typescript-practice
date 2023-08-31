@@ -169,3 +169,16 @@ type Three = "hello";
 let a1: One = "hello";
 let b1 = a1 as Two;
 let c1 = <Three>a1;
+
+const addORconcat = (
+  a: number,
+  b: number,
+  c: "add" | "concat"
+): string | number => {
+  if (c === "add") return a + b;
+  return "" + a + b;
+};
+
+let firstValue: number = addORconcat(2, 5, "add") as number;
+let secondValue = addORconcat(2, 5, "concat");
+console.log(firstValue, secondValue);

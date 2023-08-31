@@ -120,3 +120,11 @@ const isNumber = (num) => {
 let a1 = "hello";
 let b1 = a1;
 let c1 = a1;
+const addORconcat = (a, b, c) => {
+    if (c === "add")
+        return a + b;
+    return "" + a + b;
+};
+let firstValue = addORconcat(2, 5, "add");
+let secondValue = addORconcat(2, 5, "concat");
+console.log(firstValue, secondValue);

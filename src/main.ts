@@ -184,3 +184,8 @@ let secondValue = addORconcat(2, 5, "concat");
 console.log(firstValue, secondValue);
 
 10 as unknown as string;
+
+let img = document.getElementById("imgId") as HTMLImageElement;
+let nextImg = document.querySelector("img")!;
+img.src;
+nextImg.src;

@@ -129,3 +129,7 @@ let firstValue = addORconcat(2, 5, "add");
 let secondValue = addORconcat(2, 5, "concat");
 console.log(firstValue, secondValue);
 10;
+let img = document.getElementById("imgId");
+let nextImg = document.querySelector("img");
+img.src;
+nextImg.src;

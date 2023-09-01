@@ -191,11 +191,12 @@ let nextImg = document.querySelector("img")!;
 // nextImg.src;
 
 class Coder {
-  public readonly name: string;
-  private age: number;
-  protected codingLang: string = "Typescript";
   //gender!: string;
-  constructor(name: string, age: number, codingLang: string) {
+  constructor(
+    public readonly name: string,
+    private age: number,
+    protected codingLang: string = "Typescript"
+  ) {
     this.name = name;
     this.age = age;
     this.codingLang = codingLang;
@@ -210,3 +211,17 @@ const SS = new Coder("SS", 12, "Javascript");
 console.log(SS.getAge());
 console.log(SS.name);
 //console.log(SS.age, SS.codingLang);
+
+class WebDev extends Coder {
+  constructor(public computer: string, name: string, age: number) {
+    super(name, age);
+    this.computer = computer;
+  }
+
+  getLang() {
+    return `I write in ${this.codingLang}`;
+  }
+}
+
+const JJ = new WebDev("Windows", "JJ", 20);
+console.log(JJ.getAge(), JJ.getLang(), JJ.name, JJ.computer);

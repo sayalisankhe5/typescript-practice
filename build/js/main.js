@@ -163,3 +163,30 @@ class WebDev extends Coder {
 }
 const JJ = new WebDev("Windows", "JJ", 20);
 console.log(JJ.getAge(), JJ.getLang(), JJ.name, JJ.computer);
+class Guitarist {
+    constructor(name, instrument) {
+        (this.name = name), (this.instrument = instrument);
+    }
+    plays(action) {
+        return `${this.name} ${action} ${this.instrument}`;
+    }
+}
+const Sara = new Guitarist("Sara", "Guitar");
+console.log(Sara.instrument, Sara.name, Sara.plays("strums"));
+class Peoples {
+    getCount() {
+        return Peoples.count;
+    }
+    constructor(name) {
+        this.name = name;
+        this.name = name;
+        this.id = ++Peoples.count;
+    }
+}
+Peoples.count = 0;
+const Jam = new Peoples("jam");
+const Peter = new Peoples("peter");
+console.log(Jam.getCount(), "count of jam");
+console.log(Jam.id);
+console.log(Peter.id);
+console.log(Peoples.count);

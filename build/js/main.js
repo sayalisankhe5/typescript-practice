@@ -131,5 +131,21 @@ console.log(firstValue, secondValue);
 10;
 let img = document.getElementById("imgId");
 let nextImg = document.querySelector("img");
-img.src;
-nextImg.src;
+// img.src;
+// nextImg.src;
+class Coder {
+    //gender!: string;
+    constructor(name, age, codingLang) {
+        this.codingLang = "Typescript";
+        this.name = name;
+        this.age = age;
+        this.codingLang = codingLang;
+    }
+    getAge() {
+        return `Hi, I'm ${this.age}`;
+    }
+}
+const SS = new Coder("SS", 12, "Javascript");
+console.log(SS.getAge());
+console.log(SS.name);
+//console.log(SS.age, SS.codingLang);

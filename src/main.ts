@@ -187,5 +187,26 @@ console.log(firstValue, secondValue);
 
 let img = document.getElementById("imgId") as HTMLImageElement;
 let nextImg = document.querySelector("img")!;
-img.src;
-nextImg.src;
+// img.src;
+// nextImg.src;
+
+class Coder {
+  public readonly name: string;
+  private age: number;
+  protected codingLang: string = "Typescript";
+  //gender!: string;
+  constructor(name: string, age: number, codingLang: string) {
+    this.name = name;
+    this.age = age;
+    this.codingLang = codingLang;
+  }
+
+  getAge() {
+    return `Hi, I'm ${this.age}`;
+  }
+}
+
+const SS = new Coder("SS", 12, "Javascript");
+console.log(SS.getAge());
+console.log(SS.name);
+//console.log(SS.age, SS.codingLang);

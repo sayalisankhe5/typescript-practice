@@ -267,3 +267,31 @@ console.log(Jam.getCount(), "count of jam");
 console.log(Jam.id);
 console.log(Peter.id);
 console.log(Peoples.count);
+
+class Data {
+  private dataValues: string[];
+
+  constructor() {
+    this.dataValues = [];
+  }
+
+  public get data(): string[] {
+    return this.dataValues;
+  }
+
+  public set data(values: string[]) {
+    if (Array.isArray(values) && values.every((el) => typeof el == "string")) {
+      this.dataValues = values;
+    } else {
+      throw new Error("These are not string array values");
+    }
+  }
+}
+
+const ex1 = new Data();
+console.log(ex1.data);
+ex1.data = ["1", "2", "Three"];
+console.log(ex1.data);
+ex1.data = [...ex1.data, "Day"];
+console.log(ex1.data);
+//ex1.data = [...ex1.data, 123, 145];

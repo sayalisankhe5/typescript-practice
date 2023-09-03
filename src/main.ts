@@ -296,15 +296,17 @@ ex1.data = [...ex1.data, "Day"];
 console.log(ex1.data);
 //ex1.data = [...ex1.data, 123, 145];
 
-// interface TransactionsObj {
-//   food: number;
-//   books: number;
-//   work: number;
-// }
-
 interface TransactionsObj {
   readonly [index: string]: number;
+
+  food: number;
+  books: number;
+  work: number;
 }
+
+// interface TransactionsObj {
+//   readonly [index: string]: number;
+// }
 
 let todaysTransactions: TransactionsObj = {
   food: -10,
@@ -326,3 +328,26 @@ const todaysTotal = (transactions: TransactionsObj): number => {
   return sum;
 };
 console.log(todaysTotal(todaysTransactions));
+console.log(todaysTransactions["bills"]);
+interface Student {
+  name: string;
+  GPA: number;
+  courses: string[];
+}
+let student1: Student = {
+  name: "Patr",
+  GPA: 8.25,
+  courses: ["maths", "science"],
+};
+
+for (const st in student1) {
+  console.log(`${st} = ${student1[st as keyof Student]}`);
+}
+for (const st in student1) {
+  console.log(`${st} == ${student1[st as keyof typeof student1]}`);
+}
+
+const studentsLogger = (student: Student, key: keyof Student): void => {
+  console.log(`${key} is ${student1[key]}`);
+};
+studentsLogger(student1, "name");

@@ -212,6 +212,9 @@ ex1.data = ["1", "2", "Three"];
 console.log(ex1.data);
 ex1.data = [...ex1.data, "Day"];
 console.log(ex1.data);
+// interface TransactionsObj {
+//   readonly [index: string]: number;
+// }
 let todaysTransactions = {
     food: -10,
     books: -5,
@@ -230,3 +233,19 @@ const todaysTotal = (transactions) => {
     return sum;
 };
 console.log(todaysTotal(todaysTransactions));
+console.log(todaysTransactions["bills"]);
+let student1 = {
+    name: "Patr",
+    GPA: 8.25,
+    courses: ["maths", "science"],
+};
+for (const st in student1) {
+    console.log(`${st} = ${student1[st]}`);
+}
+for (const st in student1) {
+    console.log(`${st} == ${student1[st]}`);
+}
+const studentsLogger = (student, key) => {
+    console.log(`${key} is ${student1[key]}`);
+};
+studentsLogger(student1, "name");

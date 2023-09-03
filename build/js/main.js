@@ -249,3 +249,12 @@ const studentsLogger = (student, key) => {
     console.log(`${key} is ${student1[key]}`);
 };
 studentsLogger(student1, "name");
+let myIncome = {
+    salary: 1000,
+    sidehustle: "20",
+    bonus: 100,
+};
+for (const i in myIncome) {
+    //   console.log(myIncome[i as keyof Incomes]);
+    console.log(myIncome[i]);
+}

@@ -212,4 +212,21 @@ ex1.data = ["1", "2", "Three"];
 console.log(ex1.data);
 ex1.data = [...ex1.data, "Day"];
 console.log(ex1.data);
-//ex1.data = [...ex1.data, 123, 145];
+let todaysTransactions = {
+    food: -10,
+    books: -5,
+    work: 50,
+};
+console.log(todaysTransactions.books);
+console.log(todaysTransactions["work"]);
+let myProp = "food";
+console.log(todaysTransactions[myProp]);
+//todaysTransactions.food = -15;
+const todaysTotal = (transactions) => {
+    let sum = 0;
+    for (const tr in transactions) {
+        sum = sum + transactions[tr];
+    }
+    return sum;
+};
+console.log(todaysTotal(todaysTransactions));

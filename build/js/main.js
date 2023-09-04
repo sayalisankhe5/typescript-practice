@@ -267,3 +267,12 @@ console.log(isObject(2));
 console.log(isObject(["a", 2]));
 console.log(isObject({ name: "SS" }));
 console.log(isObject(null));
+const isTrue = (arg) => {
+    if (Array.isArray(arg) && !arg.length) {
+        return { arg, is: false };
+    }
+    if (isObject(arg) && !Object.keys(arg).length) {
+        return { arg, is: false };
+    }
+    return { arg, is: !!arg };
+};

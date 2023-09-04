@@ -376,3 +376,14 @@ console.log(isObject(2));
 console.log(isObject(["a", 2]));
 console.log(isObject({ name: "SS" }));
 console.log(isObject(null));
+
+const isTrue = <T>(arg: T): { arg: T; is: boolean } => {
+  if (Array.isArray(arg) && !arg.length) {
+    return { arg, is: false };
+  }
+  if (isObject(arg) && !Object.keys(arg as keyof T).length) {
+    return { arg, is: false };
+  }
+
+  return { arg, is: !!arg };
+};

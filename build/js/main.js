@@ -276,3 +276,31 @@ const isTrue = (arg) => {
     }
     return { arg, is: !!arg };
 };
+console.log(isTrue(false));
+console.log(isTrue(0));
+console.log(isTrue(true));
+console.log(isTrue(1));
+console.log(isTrue("Dave"));
+console.log(isTrue(""));
+console.log(isTrue(null));
+console.log(isTrue(undefined));
+console.log(isTrue({})); // modified
+console.log(isTrue({ name: "Dave" }));
+console.log(isTrue([])); // modified
+console.log(isTrue([1, 2, 3]));
+console.log(isTrue(NaN));
+console.log(isTrue(-0));
+const isItTrue = (arg) => {
+    if (Array.isArray(arg) && !arg.length) {
+        return { value: arg, is: false };
+    }
+    if (isObject(arg) && !Object.keys(arg).length) {
+        return { value: arg, is: false };
+    }
+    return { value: arg, is: !!arg };
+};
+const myUser = (user) => {
+    return user;
+};
+console.log(myUser({ id: 10, name: "Pate" }));
+console.log(myUser({ name: "Jake", id: 11 }));

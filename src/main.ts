@@ -387,3 +387,45 @@ const isTrue = <T>(arg: T): { arg: T; is: boolean } => {
 
   return { arg, is: !!arg };
 };
+
+console.log(isTrue(false));
+console.log(isTrue(0));
+console.log(isTrue(true));
+console.log(isTrue(1));
+console.log(isTrue("Dave"));
+console.log(isTrue(""));
+console.log(isTrue(null));
+console.log(isTrue(undefined));
+console.log(isTrue({})); // modified
+console.log(isTrue({ name: "Dave" }));
+console.log(isTrue([])); // modified
+console.log(isTrue([1, 2, 3]));
+console.log(isTrue(NaN));
+console.log(isTrue(-0));
+
+interface BoolCheck<T> {
+  value: T;
+  is: boolean;
+}
+
+const isItTrue = <T>(arg: T): BoolCheck<T> => {
+  if (Array.isArray(arg) && !arg.length) {
+    return { value: arg, is: false };
+  }
+  if (isObject(arg) && !Object.keys(arg as keyof T).length) {
+    return { value: arg, is: false };
+  }
+
+  return { value: arg, is: !!arg };
+};
+
+interface UserID {
+  id: number;
+}
+
+const myUser = <T extends UserID>(user: T): T => {
+  return user;
+};
+
+console.log(myUser({ id: 10, name: "Pate" }));
+console.log(myUser({ name: "Jake", id: 11 }));

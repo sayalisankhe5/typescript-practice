@@ -429,3 +429,34 @@ const myUser = <T extends UserID>(user: T): T => {
 
 console.log(myUser({ id: 10, name: "Pate" }));
 console.log(myUser({ name: "Jake", id: 11 }));
+
+const getUsers = <T extends UserID, K extends keyof T>(
+  users: T[],
+  key: K
+): T[K][] => {
+  return users.map((user) => user[key]);
+};
+
+const usersArray = [
+  {
+    id: 1,
+    name: "Leanne Graham",
+    username: "Bret",
+    email: "Sincere@april.biz",
+
+    phone: "1-770-736-8031 x56442",
+    website: "hildegard.org",
+  },
+  {
+    id: 2,
+    name: "Ervin Howell",
+    username: "Antonette",
+    email: "Shanna@melissa.tv",
+
+    phone: "010-692-6593 x09125",
+    website: "anastasia.net",
+  },
+];
+
+console.log(getUsers(usersArray, "email"));
+console.log(getUsers(usersArray, "username"));

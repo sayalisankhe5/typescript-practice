@@ -258,3 +258,12 @@ for (const i in myIncome) {
     //   console.log(myIncome[i as keyof Incomes]);
     console.log(myIncome[i]);
 }
+const isObject = (arg) => {
+    return typeof arg === "object" && !Array.isArray(arg) && arg != null;
+};
+console.log(isObject(undefined));
+console.log(isObject("a"));
+console.log(isObject(2));
+console.log(isObject(["a", 2]));
+console.log(isObject({ name: "SS" }));
+console.log(isObject(null));

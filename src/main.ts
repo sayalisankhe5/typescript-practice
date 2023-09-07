@@ -511,3 +511,9 @@ console.log(
     verified: false,
   })
 );
+
+const myAssignment: Readonly<Assignment> = {
+  title: "Project 3",
+  studentName: "Jake",
+  grade: 65,
+};

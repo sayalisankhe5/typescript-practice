@@ -360,3 +360,8 @@ console.log(createAssignment({
     grade: 90,
     verified: false,
 }));
+const myAssignment = {
+    title: "Project 3",
+    studentName: "Jake",
+    grade: 65,
+};

@@ -499,3 +499,15 @@ const grek: Assignment = {
   grade: 0,
 };
 console.log(updateAssignment(grek, { studentName: "Greeek", grade: 90 }));
+
+const createAssignment = (assignmentWork: Required<Assignment>) => {
+  return assignmentWork;
+};
+console.log(
+  createAssignment({
+    studentName: "Patt",
+    title: "Project 2 ",
+    grade: 90,
+    verified: false,
+  })
+);

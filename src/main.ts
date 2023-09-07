@@ -460,3 +460,21 @@ const usersArray = [
 
 console.log(getUsers(usersArray, "email"));
 console.log(getUsers(usersArray, "username"));
+
+class StateObj<T> {
+  private data: T;
+  constructor(value: T) {
+    this.data = value;
+  }
+  get dataState() {
+    return this.data;
+  }
+  set dataState(inputdata: T) {
+    this.data = inputdata;
+  }
+}
+
+var obj1 = new StateObj("Jam");
+console.log(obj1.dataState);
+obj1.dataState = "Tim";
+console.log(obj1.dataState);

@@ -327,3 +327,18 @@ const usersArray = [
 ];
 console.log(getUsers(usersArray, "email"));
 console.log(getUsers(usersArray, "username"));
+class StateObj {
+    constructor(value) {
+        this.data = value;
+    }
+    get dataState() {
+        return this.data;
+    }
+    set dataState(inputdata) {
+        this.data = inputdata;
+    }
+}
+var obj1 = new StateObj("Jam");
+console.log(obj1.dataState);
+obj1.dataState = "Tim";
+console.log(obj1.dataState);

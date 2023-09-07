@@ -342,3 +342,12 @@ var obj1 = new StateObj("Jam");
 console.log(obj1.dataState);
 obj1.dataState = "Tim";
 console.log(obj1.dataState);
+const updateAssignment = (assignmentWork, propsToUpdate) => {
+    return Object.assign(Object.assign({}, assignmentWork), propsToUpdate);
+};
+const grek = {
+    title: "First Project",
+    studentName: "Grek",
+    grade: 0,
+};
+console.log(updateAssignment(grek, { studentName: "Greeek", grade: 90 }));

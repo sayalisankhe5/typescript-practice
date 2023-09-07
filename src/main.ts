@@ -478,3 +478,24 @@ var obj1 = new StateObj("Jam");
 console.log(obj1.dataState);
 obj1.dataState = "Tim";
 console.log(obj1.dataState);
+
+interface Assignment {
+  title: string;
+  studentName: string;
+  grade: number;
+  verified?: boolean;
+}
+
+const updateAssignment = (
+  assignmentWork: Assignment,
+  propsToUpdate: Partial<Assignment>
+) => {
+  return { ...assignmentWork, ...propsToUpdate };
+};
+
+const grek: Assignment = {
+  title: "First Project",
+  studentName: "Grek",
+  grade: 0,
+};
+console.log(updateAssignment(grek, { studentName: "Greeek", grade: 90 }));
